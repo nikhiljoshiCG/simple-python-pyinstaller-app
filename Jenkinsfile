@@ -12,6 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                bat 'pip install pytest'
                 bat 'py.test --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
             }
             post {
